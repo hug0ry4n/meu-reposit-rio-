@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lairla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="mensagemInicial">
+        <h1>Oi Lairla, clique no botão abaixo!!</h1>
+        <button onclick="iniciarContagem()">Clique aqui</button>
+    </div>
+    
+    <div id="contagem"></div>
+    <div id="mensagemFinal">
+        <h1>TE AMO LINDA!!!!</h1>
+        <h2></h2>
+        <h2>♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥</h2>
+        <h2><a href="https://open.spotify.com/intl-pt/track/006pMMCuRo2TFjh8sNGSov"><u>clique aqui</u></a> pra ouvir o que tenho pra te dizer!</h2>
+    </div>
+
+    <script>
+        function iniciarContagem() {
+            document.getElementById('mensagemInicial').style.display = 'none';
+            let contagemElement = document.getElementById('contagem');
+            let tempo = 5;
+            contagemElement.style.display = 'block';
+            contagemElement.innerText = tempo;
+
+            let intervalo = setInterval(() => {
+                tempo--;
+                contagemElement.innerText = tempo;
+                if (tempo <= 0) {
+                    clearInterval(intervalo);
+                    contagemElement.style.display = 'none';
+                    document.getElementById('mensagemFinal').style.display = 'block';
+                }
+            }, 1000);
+        }
+
+        // Exibir a mensagem inicial ao carregar a página
+        document.getElementById('mensagemInicial').style.display = 'block';
+    </script>
+</body>
+</html>
